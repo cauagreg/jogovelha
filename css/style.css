@@ -1,0 +1,148 @@
+/* Reset de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #bc7dff, #7cacff);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 50px auto;
+}
+
+td {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #fff;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+td:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+td img {
+    width: 100%;
+    height: 100%;
+}
+
+form {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+label {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+input[type="radio"] {
+    accent-color: #ffcc00;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #ffcc00;
+    color: #000;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #ffe066;
+}
+
+@media (max-width: 500px) {
+    table {
+        transform: scale(0.8);
+    }
+
+    td {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Adiciona um destaque visual nas células vencedoras */
+td.vencedor {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo mais clara para indicar a vitória */
+    box-shadow: 0 0 10px 5px rgba(255, 215, 0, 0.8); /* Sombra dourada ao redor das células vencedoras */
+    z-index: 1; /* Garante que o destaque fique sobre outras camadas */
+}
+
+/* Opcional: desenha uma linha de fundo horizontal */
+td.vencedor::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ffcc00; /* Cor da linha */
+    transform: translateY(-50%);
+}
+
+/* Estilos para o modo escuro */
+body.dark-mode {
+    background: #333; /* Cor de fundo escura */
+    color: #ccc; /* Cor do texto mais clara */
+}
+
+body.dark-mode table {
+    border-color: #444; /* Cor da borda da tabela */
+}
+
+body.dark-mode td {
+    border-color: #444; /* Cor da borda das células */
+    background-color: #222; /* Cor de fundo das células */
+}
+
+body.dark-mode td:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Hover mais suave */
+}
+
+body.dark-mode button {
+    background: #444; /* Fundo do botão escuro */
+    color: #fff; /* Cor do texto do botão */
+}
+
+body.dark-mode button:hover {
+    background: #555; /* Efeito hover no botão */
+}
+
+body.dark-mode .vencedor {
+    background-color: rgba(255, 215, 0, 0.4); /* Cor de fundo mais suave para as células vencedoras */
+    box-shadow: 0 0 10px 5px rgba(255, 215, 0, 0.6); /* Sombra dourada para as células vencedoras */
+}
+

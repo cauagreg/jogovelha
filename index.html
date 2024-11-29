@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Jogo da Velha</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="left">
+                <h2>Jogar contra o computador?</h2>
+                <label for="cpu">
+                    <span>Sim</span>
+                    <input type="radio" name="escolha" id="cpu" value="O" onclick="mostrarDificuldade()">
+                </label>
+                <label for="player">
+                    <span>Não</span>
+                    <input type="radio" name="escolha" id="player" value="X" onclick="esconderDificuldade()">
+                </label>
+                <!-- Contêiner de dificuldade -->
+                <div id="dificuldade-container" style="display: none;">
+                    <h2>Escolha a dificuldade:</h2>
+                    <select id="dificuldade">
+                        <option value="facil">Fácil</option>
+                        <option value="medio">Médio</option>
+                        <option value="dificil">Difícil</option>
+                    </select>
+                </div>
+                <!-- Botão de reset -->
+                <button id="resetButton" onclick="resetarJogo()">Resetar Jogo</button>
+
+
+
+            </div>
+
+            <div class="right">
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td><img src="img/transp.png" alt="Casa do tabuleiro" id="c1" onclick="return checkjogo(this.id)"></td>
+                            <td><img src="img/transp.png" alt="Casa do tabuleiro" id="c2" onclick="return checkjogo(this.id)"></td>
+                            <td><img src="img/transp.png" alt="Casa do tabuleiro" id="c3" onclick="return checkjogo(this.id)"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/transp.png" alt="Casa do tabuleiro" id="c4" onclick="return checkjogo(this.id)"></td>
+                            <td><img src="img/transp.png" alt="Casa do tabuleiro" id="c5" onclick="return checkjogo(this.id)"></td>
+                            <td><img src="img/transp.png" alt="Casa do tabuleiro" id="c6" onclick="return checkjogo(this.id)"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/transp.png" alt="Casa do tabuleiro" id="c7" onclick="return checkjogo(this.id)"></td>
+                            <td><img src="img/transp.png" alt="Casa do tabuleiro" id="c8" onclick="return checkjogo(this.id)"></td>
+                            <td><img src="img/transp.png" alt="Casa do tabuleiro" id="c9" onclick="return checkjogo(this.id)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Área para mostrar o resultado -->
+                <div id="resultado"></div>
+            </div>
+        </div>
+        <button id="toggle-theme" onclick="toggleTheme()">Modo Escuro</button>
+    </main>
+
+    <script src="js/js.js"></script>
+</body>
+</html>
